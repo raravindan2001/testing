@@ -1,67 +1,72 @@
-<!-- Enhanced News Section -->
-<section class="news-section" id="news">
-    <div class="container">
-        <!-- Content Gate for Non-logged Users -->
-        <div id="content-gate" class="content-gate" style="display: none;">
-            <div class="gate-message">
-                <i class="fas fa-lock" style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"></i>
-                <h3>🔓 Unlock Live AI News Feed</h3>
-                <p>Get real-time updates from 50+ premium AI sources including OpenAI, Google AI, MIT Tech Review, and more.</p>
-                
-                <div class="stats-preview">
-                    <div class="stat">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">AI Sources</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Live Updates</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">1h</span>
-                        <span class="stat-label">Refresh Rate</span>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 2rem;">
-                    <a href="/signup" class="btn-primary btn-large">
-                        <i class="fas fa-rocket"></i> Start Free Trial
-                    </a>
-                    <a href="/login" class="btn-outline">
-                        <i class="fas fa-sign-in-alt"></i> Login
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Live News Content -->
-        <div class="news-header" style="text-align: center; margin-bottom: 3rem;">
-            <h2>🔴 Live AI News Feed</h2>
-            <p>Real-time updates from the top 50 AI websites worldwide</p>
-            
-            <div id="live-stats" class="hero-stats" style="margin: 2rem 0;">
-                <!-- Stats will be populated by JavaScript -->
-            </div>
-            
-            <div id="last-updated" class="text-center" style="color: #94a3b8; font-size: 0.9rem;">
-                <!-- Last updated time will be populated by JavaScript -->
-            </div>
-        </div>
-
-        <!-- Filter Controls -->
-        <div class="news-filters">
-            <button class="filter-btn active" onclick="filterNews('all')">All Sources</button>
-            <button class="filter-btn" onclick="filterNews('news')">News</button>
-            <button class="filter-btn" onclick="filterNews('discussion')">Discussions</button>
-            <button class="filter-btn" onclick="filterNews('tech')">Tech</button>
-        </div>
-
-        <!-- News Grid -->
-        <div id="news-grid" class="news-grid">
-            <!-- News items will be populated by JavaScript -->
-        </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Insights Hub - Working Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="
+    font-family: Arial, sans-serif; 
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%); 
+    color: white; 
+    text-align: center; 
+    padding: 50px; 
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+">
+    <h1 style="font-size: 3rem; margin-bottom: 1rem; color: #10b981;">🧠 AI Insights Hub</h1>
+    <h2 style="color: #60a5fa; margin-bottom: 2rem;">✅ WEBSITE IS WORKING!</h2>
+    
+    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; max-width: 600px; margin: 2rem 0;">
+        <p style="font-size: 1.2rem; margin-bottom: 1rem;">🎉 Congratulations! Your deployment is successful.</p>
+        <p style="color: #94a3b8;">Current time: <span id="time" style="color: #10b981; font-weight: bold;"></span></p>
+        <p style="color: #94a3b8;">Page loaded: <span id="loaded" style="color: #10b981; font-weight: bold;"></span></p>
     </div>
-</section>
 
-<!-- Add before closing </body> tag -->
-<script src="assets/js/content-aggregator.js"></script>
+    <button onclick="testFunction()" style="
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin: 1rem;
+        transition: all 0.3s;
+    " 
+    onmouseover="this.style.transform='scale(1.05)'" 
+    onmouseout="this.style.transform='scale(1)'">
+        🚀 Test JavaScript
+    </button>
+
+    <div id="result" style="margin-top: 2rem; padding: 1rem; background: rgba(16,185,129,0.2); border-radius: 10px; display: none;">
+        <p style="color: #10b981; font-weight: bold;">✅ JavaScript is working perfectly!</p>
+    </div>
+
+    <script>
+        // Update time every second
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').textContent = now.toLocaleString();
+        }
+
+        // Test function
+        function testFunction() {
+            document.getElementById('result').style.display = 'block';
+            console.log('✅ Test function executed successfully!');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('loaded').textContent = new Date().toLocaleString();
+            updateTime();
+            setInterval(updateTime, 1000);
+            console.log('✅ AI Insights Hub test page loaded successfully!');
+        });
+    </script>
+</body>
+</html>
